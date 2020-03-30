@@ -29,10 +29,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build Docker image
-        uses: ./docker/lint-xml-configuration
+        uses: ./.docker/lint-xml-configuration
 
       - name: Lint XML configuration files
-        uses: ./docker/lint-xml-configuration
+        uses: ./.docker/lint-xml-configuration
         with:
           args: bash ./build/lint-xml-configuration
 
