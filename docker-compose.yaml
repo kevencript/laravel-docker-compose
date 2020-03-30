@@ -22,6 +22,8 @@ services:
             - .:/var/www
         networks:
             - app-network
+        depends_on:
+            - app
 
     redis:
         image: redis:alpine
