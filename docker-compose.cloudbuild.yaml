@@ -6,17 +6,11 @@ services:
         container_name: app
         volumes:
             - .:/var/www
-        # entrypoint: dockerize -template ./.docker/app/.env:.env -wait tcp://db:3306 -timeout 40s ./.docker/docker-entrypoint.sh
         networks:
             - app-network
         depends_on:
             - db
             - redis
-        # environment:
-        #     DB_HOST: "db"
-        #     DB_DATABASE: "laravel"
-        #     DB_USERNAME: "root"
-        #     DB_PASSWORD: "root"
 
     nginx:
         build: ./.docker/nginx
