@@ -9,6 +9,10 @@ steps:
 
     - id: "Installing Composer"
       name: "gcr.io/cloud-builders/docker"
+      args: ["exec", "-t", "app", "docker", "ps"]
+
+    - id: "Installing Composer"
+      name: "gcr.io/cloud-builders/docker"
       args: ["exec", "-t", "app", "composer", "install"]
 
     - id: "Copying .env"
